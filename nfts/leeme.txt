@@ -1,0 +1,4 @@
+{
+"action": "image_generation",
+"action_input": "A high-quality digital crypto-art illustration of a cow with its young calves in a field, inspired by the Colombian Cesar region. Style: Vibrant purple, neon blue, and glowing gold accents. The animals have subtle glowing geometric patterns or circuit lines on their bodies. Background: A dramatic sunset over mountains in a stylized, high-contrast digital art style. Bottom corner features a small, subtle tech logo for 'Aura Agro'. 8k resolution, professional NFT aesthetic."
+}
