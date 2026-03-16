@@ -7,81 +7,48 @@
     <style>
         body { background-color: #0a0a0b; color: #00ffcc; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 20px; }
         .container { max-width: 900px; margin: auto; }
-        h1 { color: #8e44ad; text-transform: uppercase; letter-spacing: 3px; border-bottom: 2px solid #8e44ad; display: inline-block; padding-bottom: 10px; margin-bottom: 10px; }
-        
-        /* Estilo del Botón de Wallet */
-        #connectBtn { 
-            margin: 20px 0; padding: 12px 25px; border-radius: 50px; border: 2px solid #00ffcc; 
-            background: transparent; color: #00ffcc; font-weight: bold; cursor: pointer; transition: 0.3s;
-        }
-        #connectBtn:hover { background: #00ffcc; color: #0a0a0b; }
-
+        h1 { color: #8e44ad; text-transform: uppercase; border-bottom: 2px solid #8e44ad; display: inline-block; padding-bottom: 10px; }
+        #connectBtn { margin: 20px 0; padding: 12px 25px; border-radius: 50px; border: 2px solid #00ffcc; background: transparent; color: #00ffcc; font-weight: bold; cursor: pointer; }
         .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
-        
-        .nft-card { background: #161618; border: 1px solid #333; border-radius: 15px; padding: 15px; transition: 0.3s; }
-        .nft-card:hover { border-color: #8e44ad; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(142, 68, 173, 0.4); }
-        
-        /* Ajuste de imágenes para que no se corten */
-        .nft-card img { width: 100%; height: auto; border-radius: 10px; margin-bottom: 15px; display: block; background: #222; }
-        
+        .nft-card { background: #161618; border: 1px solid #333; border-radius: 15px; padding: 15px; }
+        .nft-card img { width: 100%; height: auto; border-radius: 10px; display: block; }
         .btn { display: block; padding: 10px; background: #8e44ad; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 10px; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>💎 Aura Agro-Genesis</h1>
-        <p>Digital Creator: <b>Dentalmovilr4</b> | Web3 Project</p>
-
+        <p>Digital Creator: <b>Dentalmovilr4</b></p>
         <button id="connectBtn">🔌 Conectar Billetera</button>
 
         <div class="gallery">
             <div class="nft-card">
-                <img src="nfts/1.jpg.jpg" alt="Vínculo Ancestral">
+                <img src="./nfts/1.jpg.jpg" alt="NFT 1">
                 <h3>Vínculo Ancestral #001</h3>
-                <p>Rareza: <span style="color: #f1c40f;">Legendaria</span></p>
                 <a href="#" class="btn">Ver en OpenSea</a>
             </div>
-
             <div class="nft-card">
-                <img src="nfts/2.jpg.jpg" alt="Horizonte Monad">
+                <img src="./nfts/2.jpg.jpg" alt="NFT 2">
                 <h3>Horizonte Monad #002</h3>
-                <p>Rareza: <span style="color: #9b59b6;">Épica</span></p>
                 <a href="#" class="btn">Ver en OpenSea</a>
             </div>
-
             <div class="nft-card">
-                <img src="nfts/3.jpg.jpg" alt="Nutrición V2">
+                <img src="./nfts/3.jpg.jpg" alt="NFT 3">
                 <h3>Nutrición V2 #003</h3>
-                <p>Rareza: <span style="color: #9b59b6;">Épica</span></p>
                 <a href="#" class="btn">Ver en OpenSea</a>
             </div>
         </div>
     </div>
-
     <script>
-        const connectButton = document.getElementById('connectBtn');
-
-        async function connectWallet() {
-            if (typeof window.ethereum !== 'undefined') {
-                try {
-                    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-                    const account = accounts[0];
-                    const shortAccount = account.substring(0, 6) + "..." + account.substring(account.length - 4);
-                    connectButton.innerText = `Conectado: ${shortAccount}`;
-                    connectButton.style.borderColor = "#2ecc71";
-                    connectButton.style.color = "#2ecc71";
-                } catch (error) {
-                    console.error("Usuario rechazó la conexión");
-                }
-            } else {
-                alert("Por favor instala MetaMask en tu navegador.");
-            }
-        }
-
-        connectButton.addEventListener('click', connectWallet);
+        const btn = document.getElementById('connectBtn');
+        btn.onclick = async () => {
+            if (window.ethereum) {
+                const acc = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                btn.innerText = "Conectado: " + acc[0].substring(0,6) + "...";
+            } else { alert("Instala MetaMask"); }
+        };
     </script>
 </body>
 </html>
-
 
 
