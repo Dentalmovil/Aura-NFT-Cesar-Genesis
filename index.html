@@ -3,16 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura NFT - Dentalmovilr4</title>
+    <title>Aura NFT - Dentalmovil</title>
     <style>
         body { background-color: #0a0a0b; color: #00ffcc; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 20px; }
         .container { max-width: 900px; margin: auto; }
-        h1 { color: #8e44ad; text-transform: uppercase; letter-spacing: 3px; border-bottom: 2px solid #8e44ad; display: inline-block; padding-bottom: 10px; }
-        #connectBtn { margin: 20px 0; padding: 12px 25px; border-radius: 50px; border: 2px solid #00ffcc; background: transparent; color: #00ffcc; font-weight: bold; cursor: pointer; }
+        h1 { color: #8e44ad; text-transform: uppercase; letter-spacing: 3px; border-bottom: 2px solid #8e44ad; display: inline-block; padding-bottom: 10px; margin-bottom: 20px; }
+        
+        #connectBtn { 
+            margin: 20px 0; padding: 12px 25px; border-radius: 50px; border: 2px solid #00ffcc; 
+            background: transparent; color: #00ffcc; font-weight: bold; cursor: pointer; transition: 0.3s;
+        }
+        #connectBtn:hover { background: #00ffcc; color: #0a0a0b; }
+
         .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
         .nft-card { background: #161618; border: 1px solid #333; border-radius: 15px; padding: 15px; transition: 0.3s; }
         .nft-card:hover { border-color: #8e44ad; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(142, 68, 173, 0.4); }
-        .nft-card img { width: 100%; height: auto; border-radius: 10px; display: block; }
+        
+        .nft-card img { width: 100%; height: auto; border-radius: 10px; margin-bottom: 15px; display: block; }
+        
         .btn { display: block; padding: 10px; background: #8e44ad; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 10px; }
     </style>
 </head>
@@ -25,21 +33,21 @@
 
         <div class="gallery">
             <div class="nft-card">
-                <img src="https://raw.githubusercontent.com/Dentalmovilr4/Aura-NFT/main/nfts/1.jpg.jpg" alt="Vínculo Ancestral">
+                <img src="https://raw.githubusercontent.com/Dentalmovil/Aura-NFT-Cesar-Genesis/main/nfts/1.jpg.jpg" alt="Vínculo Ancestral">
                 <h3>Vínculo Ancestral #001</h3>
                 <p>Rareza: <span style="color: #f1c40f;">Legendaria</span></p>
                 <a href="https://opensea.io/" class="btn">Ver en OpenSea</a>
             </div>
 
             <div class="nft-card">
-                <img src="https://raw.githubusercontent.com/Dentalmovilr4/Aura-NFT/main/nfts/2.jpg.jpg" alt="Horizonte Monad">
+                <img src="https://raw.githubusercontent.com/Dentalmovil/Aura-NFT-Cesar-Genesis/main/nfts/2.jpg.jpg" alt="Horizonte Monad">
                 <h3>Horizonte Monad #002</h3>
                 <p>Rareza: <span style="color: #9b59b6;">Épica</span></p>
                 <a href="https://opensea.io/" class="btn">Ver en OpenSea</a>
             </div>
 
             <div class="nft-card">
-                <img src="https://raw.githubusercontent.com/Dentalmovilr4/Aura-NFT/main/nfts/3.jpg.jpg" alt="Nutrición V2">
+                <img src="https://raw.githubusercontent.com/Dentalmovil/Aura-NFT-Cesar-Genesis/main/nfts/3.jpg.jpg" alt="Nutrición V2">
                 <h3>Nutrición V2 #003</h3>
                 <p>Rareza: <span style="color: #9b59b6;">Épica</span></p>
                 <a href="https://opensea.io/" class="btn">Ver en OpenSea</a>
@@ -57,12 +65,11 @@
                     btn.style.color = "#2ecc71";
                     btn.style.borderColor = "#2ecc71";
                 } catch (e) { console.log("Conexión cancelada"); }
-            } else {
-                alert("Por favor, instala MetaMask para ver tus NFTs.");
-            }
+            } else { alert("Instala MetaMask"); }
         };
     </script>
 </body>
 </html>
+
 
 
